@@ -14,11 +14,16 @@ const Contact = () => {
     setShowModal(false);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    const email = event.target.email.value;
-    const message = event.target.message.value;
+    const target = event.target as typeof event.target & {
+      name: { value: string };
+      email: { value: string };
+      message: { value: string };
+    };
+    const name = target.name.value;
+    const email = target.email.value;
+    const message = target.message.value;
 
     try {
       const response = await fetch('/api/sendEmail', {
