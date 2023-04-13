@@ -3,9 +3,15 @@ import styles from './RecipeWidget.module.scss';
 import { searchRecipesByIngredients, fetchRecipeDetails } from '@/utils/api';
 import Modal from '@/components/Modal/Modal';
 
+interface Recipe {
+  id: number;
+  image: string;
+  title: string;
+}
+
 const RecipeWidget: React.FC = () => {
   const [ingredients, setIngredients] = useState('');
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [selectedRecipe, setSelectedRecipe] = useState<any>(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -38,8 +44,9 @@ const RecipeWidget: React.FC = () => {
         <button type="submit">Search</button>
       </form>
       <p className={styles.apiNote}>
-       *If no search results show up, and the console is showing 402, then the daily API call limit has been reached.
-    </p>
+        *If no search results show up, and the console is showing 402, then the
+        daily API call limit has been reached.
+      </p>
       <ul>
         {recipes.map((recipe: any) => (
           <li key={recipe.id} onClick={() => openRecipeDetails(recipe.id)}>
@@ -62,7 +69,9 @@ const RecipeWidget: React.FC = () => {
             <div className={styles.instructions}>
               <h3>Instructions</h3>
               <div
-                dangerouslySetInnerHTML={{ __html: selectedRecipe.instructions }}
+                dangerouslySetInnerHTML={{
+                  __html: selectedRecipe.instructions,
+                }}
               />
               <p>
                 Servings: {selectedRecipe.servings}

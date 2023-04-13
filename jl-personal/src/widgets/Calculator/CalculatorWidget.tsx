@@ -10,23 +10,23 @@ export default function CalculatorWidget({
   autoFocusInput = false,
 }: CalculatorWidgetProps) {
   const [result, setResult] = useState('');
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState<string[]>([]);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [radians, setRadians] = useState(true);
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (autoFocusInput) {
+    if (autoFocusInput && inputRef.current) {
       inputRef.current.focus();
     }
   }, [autoFocusInput]);
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (hasCalculated) {
-      setResult(e.target.name);
+      setResult(e.currentTarget.name);
       setHasCalculated(false);
     } else {
-      setResult(result.concat(e.target.name));
+      setResult(result.concat(e.currentTarget.name));
     }
   };
 
@@ -44,7 +44,7 @@ export default function CalculatorWidget({
     try {
       const res = eval(result).toString();
       setResult(res);
-      updateHistory(result, res);
+      updateHistory(result, parseFloat(res));
       setHasCalculated(true);
     } catch (err) {
       setResult('Error');
@@ -52,13 +52,16 @@ export default function CalculatorWidget({
     }
   };
 
-  const handleTrigClick = (func, funcName) => {
+  const handleTrigClick = (
+    func: (angle: number) => number,
+    funcName: string
+  ) => {
     const angle = radians
       ? parseFloat(result)
       : parseFloat(result) * (Math.PI / 180);
     const res = func(angle).toString();
     setResult(res);
-    updateHistory(`${funcName}(${result})`, res);
+    updateHistory(`${funcName}(${result})`, parseFloat(res));
   };
 
   const handleLog = () => {
@@ -76,14 +79,14 @@ export default function CalculatorWidget({
   const handleSqrt = () => {
     const res = Math.sqrt(parseFloat(result)).toString();
     setResult(res);
-    updateHistory(`sqrt(${result})`, res);
+    updateHistory(`sqrt(${result})`, parseFloat(res));
   };
 
   const toggleRadDeg = () => {
     setRadians(!radians);
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       calculate();
     } else if (e.key === 'Escape') {
@@ -91,7 +94,7 @@ export default function CalculatorWidget({
     }
   };
 
-  const updateHistory = (expression, result) => {
+  const updateHistory = (expression: string, result: number) => {
     setHistory([...history, `${expression} = ${result}`]);
   };
 
