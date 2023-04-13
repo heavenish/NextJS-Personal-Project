@@ -19,7 +19,7 @@ const Contact = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const message = event.target.message.value;
-  
+
     try {
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
@@ -28,38 +28,46 @@ const Contact = () => {
         },
         body: JSON.stringify({ name, email, message }),
       });
-  
+
       if (!response.ok) {
         throw new Error('Failed to send email');
       }
-  
+
       alert('Email sent successfully');
       closeModal();
     } catch (error) {
       alert('Failed to send email');
     }
   };
-  
 
   const handleEmailClick = () => {
     window.location.href = 'mailto:lee.jungro@gmail.com';
-  }
+  };
 
   return (
     <Layout>
       <div className={styles.contact}>
         <h1>Contact Me</h1>
         <p>
-          If you'd like to get in touch or discuss potential projects, please feel free to reach out through any of the following methods:
+          If you`d like to get in touch or discuss potential projects, please
+          feel free to reach out through any of the following methods:
         </p>
         <ul>
           <a href="mailto:lee.jungro@gmail.com">Email</a>
           <br />
-          <a href="https://www.linkedin.com/in/jungro-lee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/jungro-lee/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
           {/* <li>GitHub: <a href="https://github.com/your_github" target="_blank" rel="noopener noreferrer">https://github.com/your_github</a></li> */}
         </ul>
-        
-        <button className={styles.contactButton} onClick={openModal}>Send Me a Message</button>
+
+        <button className={styles.contactButton} onClick={openModal}>
+          Send Me a Message
+        </button>
         <Modal showModal={showModal} closeModal={closeModal}>
           <h2>Contact Form</h2>
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -69,7 +77,9 @@ const Contact = () => {
             <input type="email" id="email" name="email" required />
             <label htmlFor="message">Message:</label>
             <textarea id="message" name="message" maxLength={2000} required />
-            <button type="submit" className={styles.submitButton}>Send</button>
+            <button type="submit" className={styles.submitButton}>
+              Send
+            </button>
           </form>
         </Modal>
       </div>
