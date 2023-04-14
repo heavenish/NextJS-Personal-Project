@@ -54,8 +54,8 @@ const Contact = () => {
       <div className={styles.contact}>
         <h1>Contact Me</h1>
         <p>
-          If you`d like to get in touch or discuss potential projects, please
-          feel free to reach out through any of the following methods:
+          If you&rsquo;d like to get in touch or discuss potential projects,
+          please feel free to reach out through any of the following methods:
         </p>
         <ul>
           <a href="mailto:lee.jungro@gmail.com">Email</a>

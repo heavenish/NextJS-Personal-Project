@@ -149,9 +149,9 @@ const WeatherWidget = () => {
               </div>
               <div className={styles.temperature}>
                 {isCelsius
-                  ? weather.temperature
-                  : Math.round((weather.temperature * 9) / 5 + 32)}
-                {isCelsius ? '°C' : '°F'}
+                  ? Math.round((weather.temperature * 9) / 5 + 32)
+                  : weather.temperature}
+                {isCelsius ? '°F' : '°C'}
               </div>
             </div>
             <label className={styles.toggleSwitch}>

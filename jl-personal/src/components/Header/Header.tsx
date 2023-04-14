@@ -13,22 +13,12 @@ const Header = () => {
         <NextLink href="/" passHref>
           <span className={styles.navLink}>Home</span>
         </NextLink>
-        <div className={styles.dropdown}>
-          <NextLink href="/about" passHref>
-            <span className={styles.navLink}>About</span>
-          </NextLink>
-          <div className={styles.dropdownContent}>
-            <div className={styles.dropdown}>
-              <a href="#">Widgets</a>
-              <div className={styles.dropdownContent}>
-                <a href="#">Calculator Widget</a>
-                <a href="#">Weather Widget</a>
-              </div>
-            </div>
-            <a href="#">Work</a>
-            <a href="#">Anchor Item</a>
-          </div>
-        </div>
+        <NextLink href="/about" passHref>
+          <span className={styles.navLink}>About</span>
+        </NextLink>
+        <NextLink href="/projects" passHref>
+          <span className={styles.navLink}>Projects</span>
+        </NextLink>
         <NextLink href="/contact" passHref>
           <span className={styles.navLink}>Contact</span>
         </NextLink>
