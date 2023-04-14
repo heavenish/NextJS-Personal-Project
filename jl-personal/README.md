@@ -36,3 +36,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Introduction
+
+Welcome, this is just a side project I have been working on in my free time since 04/01/23. About a month ago I was introduced to Next.js, and thought it would be a fun challenge and learning experience to build my own portfolio website. Serendipity led me to ChatGPT, and this is technically my first personal deployed project.
+
+This is a work in progress, and I have many things I would like to configure, update, and expand.
+
+Hope you enjoy!
+
