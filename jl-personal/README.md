@@ -1,3 +1,13 @@
+## Introduction
+
+Welcome to my side project, which I embarked upon on 04/01/23 as an exciting challenge and learning experience. After being introduced to Next.js a month ago, I was inspired to create my own portfolio website that showcases my skills and passion for web development. In a delightful turn of events, I discovered ChatGPT and decided to incorporate it as my first personal deployed project.
+
+Please note that this is a work in progress, and I have many ideas for improvements, updates, and expansion in the pipeline.
+
+I hope you enjoy exploring my portfolio and witnessing the fruits of my labor!
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
