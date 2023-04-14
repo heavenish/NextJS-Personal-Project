@@ -1,3 +1,13 @@
+## Introduction
+
+Welcome to my side project, which I embarked upon on 04/01/23 as an exciting challenge and learning experience. After being introduced to Next.js a month ago, I was inspired to create my own portfolio website that showcases my skills and passion for web development. In a delightful turn of events, I discovered ChatGPT and decided to incorporate it as my first personal deployed project.
+
+Please note that this is a work in progress, and I have many ideas for improvements, updates, and expansion in the pipeline.
+
+I hope you enjoy exploring my portfolio and witnessing the fruits of my labor!
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -36,12 +46,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Introduction
-
-Welcome, this is just a side project I have been working on in my free time since 04/01/23. About a month ago I was introduced to Next.js, and thought it would be a fun challenge and learning experience to build my own portfolio website. Serendipity led me to ChatGPT, and this is technically my first personal deployed project.
-
-This is a work in progress, and I have many things I would like to configure, update, and expand.
-
-Hope you enjoy!
-
